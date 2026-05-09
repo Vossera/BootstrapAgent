@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rethink-bootstrap"
+version = "0.1.0"
+description = "Multi-agent prototype for generating verified .bootstrap startup packages."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+  {name = "Rethink Bootstrap Authors"},
+]
+keywords = ["software agents", "reproducibility", "bootstrap", "verification", "arxiv artifact"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = [
+  "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+agents = [
+  "deepagents>=0.5",
+  "langchain-openai>=1.2",
+  "langchain-deepseek>=1.0",
+]
+dev = [
+  "pytest>=8",
+]
+
+[project.scripts]
+rethink = "rethink.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rethink = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

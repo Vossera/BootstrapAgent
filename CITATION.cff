@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the associated arXiv preprint."
+title: "Rethink Bootstrap: Agent-Ready Startup Packages for Software Repositories"
+authors:
+  - name: "Rethink Bootstrap Authors"
+version: "0.1.0"
+date-released: "2026-05-09"
+license: "MIT"
+abstract: "Rethink Bootstrap generates and verifies compact .bootstrap startup packages for software repositories so downstream agents and users can reproduce installation and validation paths with less trial and error."
