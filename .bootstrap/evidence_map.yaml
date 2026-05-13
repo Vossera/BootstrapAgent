@@ -1,0 +1,32 @@
+repo_name: BootsrapAgent
+evidence:
+  -
+    source: heuristic
+    path: .
+    summary: Repository structure overview for bootstrap planning
+    excerpt: "top-level entries: code/, data/, .gitignore, CITATION.cff, LICENSE, README.md, REPRODUCIBILITY.md\npython package dirs: code/src/rethink\ntest dirs: code/tests"
+    executed: false
+  -
+    source: readme
+    path: README.md
+    summary: Found README.md
+    excerpt: "# Rethink Bootstrap\nRethink Bootstrap is the public companion repository for an arXiv preprint on agent-ready startup packages for software repositories. It contains a compact Python implementation, deterministic verifier, benchmark input lists, and reproducibility instructions for generating and checking `.bootstrap/` packages.\nThe repository is intentionally small. Generated run directories, local repository checkouts, raw logs, paper build products, API keys, and machine-specific caches are excluded so the artifact can be cloned, inspected, and tested without private state.\n## Repository Layout\n- `code/`: Python package, CLI, Docker verifier, benchmark runner, and tests.\n- `data/benchmark_inputs/`: CSV inputs used to select benchmark repositories.\n- `REPRODUCIBILITY.md`: environment setup, smoke tests, Docker verifier setup, and benchmark rerun notes.\n- `CITATION.cff`: citation metadata placeholder to update once the arXiv identifier is assigned.\n- `LICENSE`: MIT license for the released code and documentation.\n## Quick Start\n```bash\ncd code\npython -m pip install -e '.[dev]'\npython -m pytest\n```\nOptional LLM-agent dependencies can be installed with:\n```bash\npython -m pip install -e '.[agents,dev]'\n```\nGenerate a `.bootstrap/` package for a local repository without Docker verification:\n```bash\nrethink bootstrap --repo /path/to/repo --out runs/manual --allow-fallback --no-verify\n```\nBuild the Docker verifier image from `code/`:\n```bash\nscripts/build-bootstrap-base-image.sh\n```\nThen verify a repository that already contains `.bootstrap/`:"
+    executed: false
+  -
+    source: package_metadata
+    path: code/pyproject.toml
+    summary: "Python project metadata with build backend setuptools.build_meta; build requirements: setuptools>=68"
+    excerpt: "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n[project]\nname = \"rethink-bootstrap\"\nversion = \"0.1.0\"\ndescription = \"Multi-agent prototype for generating verified .bootstrap startup packages.\"\nreadme = \"README.md\"\nrequires-python = \">=3.11\"\nlicense = {text = \"MIT\"}\nauthors = [\n  {name = \"Rethink Bootstrap Authors\"},\n]\nkeywords = [\"software agents\", \"reproducibility\", \"bootstrap\", \"verification\", \"arxiv artifact\"]\nclassifiers = [\n  \"Development Status :: 3 - Alpha\",\n  \"Intended Audience :: Science/Research\",\n  \"License :: OSI Approved :: MIT License\",\n  \"Programming Language :: Python :: 3\",\n  \"Programming Language :: Python :: 3.11\",\n  \"Programming Language :: Python :: 3.12\",\n  \"Topic :: Scientific/Engineering\",\n  \"Topic :: Software Development :: Testing\",\n]\ndependencies = [\n  \"pydantic>=2.6\",\n]\n[project.optional-dependencies]\nagents = [\n  \"deepagents>=0.5\",\n  \"langchain-openai>=1.2\",\n  \"langchain-deepseek>=1.0\",\n]\ndev = [\n  \"pytest>=8\",\n]\n[project.scripts]\nrethink = \"rethink.cli:main\"\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n[tool.setuptools.package-data]\nrethink = [\"py.typed\"]\n[tool.pytest.ini_options]\ntestpaths = [\"tests\"]"
+    executed: false
+  -
+    source: readme
+    path: code/README.md
+    summary: Found README.md
+    excerpt: "# Rethink Bootstrap Code\nThis package implements the CLI, planning logic, bootstrap writer, Docker verifier, benchmark helpers, and tests for the Rethink Bootstrap arXiv artifact.\n## Install\nRun commands from this `code/` directory unless noted otherwise.\n```bash\npython -m pip install -e '.[dev]'\n```\nFor agent-backed bootstrap generation:\n```bash\npython -m pip install -e '.[agents,dev]'\n```\n## Test\n```bash\npython -m pytest\n```\n## Docker Verifier Image\n```bash\nscripts/build-bootstrap-base-image.sh\n```\nThe default image tag is `rethink-bootstrap-base:latest`.\n## CLI Examples\nGenerate a bootstrap package without Docker verification:"
+    executed: false
+  -
+    source: readme
+    path: data/README.md
+    summary: Found README.md
+    excerpt: "## `benchmark_inputs/`\n- `repo2run_selected_122.csv`: 122 selected repositories used for the main benchmark slice.\n- `executionAgent.csv`: 50 repositories used for the ExecutionAgent baseline input list.\n- `installmatic.csv`: 40 repositories used for the Installamatic baseline input list.\nThe CSV files use stable columns such as `name`, `safe_name`, `url`, and `language`. `repo2run_selected_122.csv` also includes `index` and `full_name`.\n## Local Preparation"
+    executed: false
