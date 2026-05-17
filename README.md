@@ -1,8 +1,17 @@
-# Rethink Bootstrap
+# BootstrapAgent: Distilling Repository Setup into Reusable Agent Knowledge 
 
-Rethink Bootstrap is the public companion repository for an arXiv preprint on agent-ready startup packages for software repositories. It contains a compact Python implementation, deterministic verifier, benchmark input lists, and reproducibility instructions for generating and checking `.bootstrap/` packages.
+This repository contains the official code for the paper:
 
-The repository is intentionally small. Generated run directories, local repository checkouts, raw logs, paper build products, API keys, and machine-specific caches are excluded so the artifact can be cloned, inspected, and tested without private state.
+> **BootstrapAgent: Distilling Repository Setup into Reusable Agent Knowledge**
+
+> 📄 Paper link: 
+
+---
+
+## 📌 Overview
+Code agents increasingly help developers work with unfamiliar repositories, but every such task depends on a costly prerequisite: bootstrapping the repository into a usable development state. This process requires substantial trial-and-error exploration, yet the resulting knowledge--resolved dependencies, repair strategies--stays trapped in a single conversation, unavailable to future agents. We therefore formulate repository bootstrapping as a reusable startup knowledge problem and introduce **BootstrapAgent**, a multi-agent framework that distills the heuristics discovered during bootstrap exploration into a persistent, verifiable, agent-consumable *.bootstrap* contract. Through evidence extraction, structured planning, deterministic Docker-based verification, and trace-driven repair, BootstrapAgent generates a contract covering environment setup, diagnostic checks, minimal verification, and accumulated repair knowledge. We further propose *warm repair with clean replay* to accelerate iterative debugging without sacrificing cold-start reproducibility, and a *delta repair with sanity check* to prevent reward hacking. Experiments on three benchmarks show that BootstrapAgent achieves a 92.9% success rate, outperforming the baseline by over 10% while reducing downstream agent token usage by 25.9% and build time by 22.3%.
+
+---
 
 ## Repository Layout
 
@@ -67,4 +76,3 @@ Full benchmark reproduction may require Docker, network access, local storage fo
 
 ## Citation
 
-If you use this artifact, cite the associated arXiv preprint. Update `CITATION.cff` with the final author list, arXiv identifier, repository URL, and release DOI once those are available.
