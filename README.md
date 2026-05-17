@@ -13,7 +13,7 @@ Code agents increasingly help developers work with unfamiliar repositories, but 
 
 ---
 
-## Repository Layout
+## 📂 Repository Layout
 
 - `code/`: Python package, CLI, Docker verifier, benchmark runner, and tests.
 - `data/benchmark_inputs/`: CSV inputs used to select benchmark repositories.
@@ -74,5 +74,5 @@ python scripts/run_csv_slice.py ../data/benchmark_inputs/repo2run_selected_122.c
 
 Full benchmark reproduction may require Docker, network access, local storage for cloned repositories, and provider API keys for non-fallback LLM runs. See `REPRODUCIBILITY.md` for the longer protocol.
 
-## Citation
+## 📄 Citation
 
