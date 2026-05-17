@@ -100,9 +100,3 @@ Each successful run writes:
 - `traces/`: verifier command traces when verification is enabled.
 
 Generated `runs/` directories are intentionally ignored by Git. Preserve or archive them separately when preparing paper tables or long-running benchmark reports.
-
-## Notes for arXiv Release
-
-- Update `CITATION.cff` after the arXiv identifier and repository URL are final.
-- If the paper reports full aggregate results, either add the compact derived CSVs to `data/` or link a permanent external archive from the root README.
-- Do not commit local API keys, provider transcripts containing secrets, cloned benchmark repositories, raw Docker workspaces, or paper build outputs.
