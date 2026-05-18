@@ -4,7 +4,7 @@ This repository contains the official code for the paper:
 
 > **BootstrapAgent: Distilling Repository Setup into Reusable Agent Knowledge**
 
-> 📄 Paper link: 
+> 📄 Paper link: https://arxiv.org/abs/2605.15815
 
 ---
 
