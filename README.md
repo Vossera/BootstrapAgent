@@ -75,4 +75,14 @@ python scripts/run_csv_slice.py ../data/benchmark_inputs/repo2run_selected_122.c
 Full benchmark reproduction may require Docker, network access, local storage for cloned repositories, and provider API keys for non-fallback LLM runs. See `REPRODUCIBILITY.md` for the longer protocol.
 
 ## 📄 Citation
-
+```bibtex
+@misc{fu2026bootstrapagentdistillingrepositorysetup,
+      title={BootstrapAgent: Distilling Repository Setup into Reusable Agent Knowledge}, 
+      author={Sihan Fu and Oucheng Liu and Shiyuan Wang and Jin Shi and Chengkun Wei},
+      year={2026},
+      eprint={2605.15815},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2605.15815}, 
+}
+```
